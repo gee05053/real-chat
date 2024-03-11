@@ -1,5 +1,13 @@
+version: "3.8"
 services:
+  realtime-chat-server:
+    build: ./
+    command: python server.py
+    volumes:
+      - ./:/usr/src/
+    ports:
+      - 8080:8080
   realtime-chat-redis:
     image: redis:7.0.5-alpine
     ports:
-      - "6379:6379"
+      - 6379:6379

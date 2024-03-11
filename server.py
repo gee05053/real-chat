@@ -43,7 +43,7 @@ async def send_message_to_client(ws, user_id, pubsub) :
 async def websocket_handler(request) :
   ws = web.WebSocketResponse()
   await ws.prepare(request)
-  redis = await aioredis.from_url("redis://localhost") #redis 연결
+  redis = await aioredis.from_url("redis://realtime-chat-redis") #redis 연결
   pubsub = redis.pubsub()
   await pubsub.subscribe("chat") #구독
   global count
