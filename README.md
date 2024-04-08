@@ -27,5 +27,3 @@ $ docker compose docker-compose.yml up --build
 ```
 $ python3 client.py
 ```
-
-test
